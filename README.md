@@ -1,43 +1,34 @@
-# Astro Starter Kit: Minimal
+# 个人简历网站
 
-```sh
-pnpm create astro@latest -- --template minimal
+个人简历网站：在线预览 + 一键打印 A4 PDF。在线地址：<https://resume.yl4055.top>
+
+技术栈：**Astro 7 + Vue 3 + TailwindCSS 4**（pnpm 管理，禁止 npm）。
+
+## 快速开始
+
+```bash
+pnpm install
+pnpm dev       # 开发服务器 http://localhost:4321
+pnpm check     # 类型检查
+pnpm build     # 生产构建到 dist/
+pnpm preview   # 预览构建产物
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## 核心特性
 
-## 🚀 Project Structure
+- **数据驱动**：所有简历内容集中在 `src/data/resume.json`，改这一个文件即可更新整站（类型定义见 `src/types/resume.ts`）
+- **A4 打印**：简历页零 JS，屏幕端 210mm 纸张模拟与 `@page` 边距一致，所见即打印所得
+- **项目筛选**：项目页支持按技术栈标签筛选
 
-Inside of your Astro project, you'll see the following folders and files:
+## 验证打印效果
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+```bash
+# 需先启动 dev / preview 服务器
+chrome --headless --print-to-pdf=out.pdf --no-pdf-header-footer --print-background http://localhost:4321/resume
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+> Windows 下 Chrome 对 `/tmp` 等 POSIX 路径会重定向（如 `D:/DevTools/Temp`），建议用完整 Windows 路径。
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## 部署
 
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+静态站点，部署于 Cloudflare Pages（根路径）。项目架构与踩坑说明详见 [CLAUDE.md](./CLAUDE.md)。

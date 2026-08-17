@@ -20,7 +20,7 @@ pnpm preview        # 预览构建产物
 
 ### 数据驱动（改简历只动一个文件）
 
-`src/data/resume.json` 是唯一数据源，所有页面从这里读取；`src/types/resume.ts` 定义与 JSON 一一对应的 TS 接口。页面用法：`import resume from '../data/resume.json'` 后 `const data = resume as ResumeData`。当前为模拟数据（林晓宇/前端工程师），用户后续替换真实内容。`.astro` 组件里无法直接 `as` 断言时在 frontmatter 中处理。
+`src/data/resume.json` 是唯一数据源，所有页面从这里读取；`src/types/resume.ts` 定义与 JSON 一一对应的 TS 接口。页面用法：`import resume from '../data/resume.json'` 后 `const data = resume as ResumeData`。当前为真实个人数据（杨亮/高级 PHP 开发工程师），已公开部署；修改简历内容只改此文件。`.astro` 组件里无法直接 `as` 断言时在 frontmatter 中处理。
 
 ### 打印方案（最易踩坑处）
 
@@ -31,8 +31,8 @@ pnpm preview        # 预览构建产物
 
 ### 零 JS 哲学与组件划分
 
-- 简历页整页零 JS：`Resume*` 前缀组件全部是 `.astro` 静态组件（技能条用 inline style width%，打印按钮用内联 `onclick="window.print()"`）
-- 仅 3 个 Vue 组件，均有明确水合指令：`MobileMenu`（client:visible）、`HomeSkillBars`（client:visible，IntersectionObserver 动画）、`ProjectFilter`（client:load，技术栈标签筛选）
+- 简历页内容区零 JS：打印输出的 `.resume-sheet` 内所有 `Resume*` 组件均为 `.astro` 静态组件（技能条用 inline style width%，打印按钮用内联 `onclick="window.print()"`），打印链路无 JS 依赖
+- 仅 3 个 Vue 组件，均有明确水合指令：`MobileMenu`（client:visible，全站导航，`print:hidden` 不影响打印）、`HomeSkillBars`（client:visible，挂载后触发技能条过渡动画）、`ProjectFilter`（client:load，技术栈标签筛选）
 - `Icon.astro`：内联 SVG 图标集，`name` prop 映射 path，零依赖
 
 ### 样式体系
@@ -46,6 +46,6 @@ Tailwind v4 `@theme` 自定义色板（global.css）：`primary`（清新青）�
 
 ## 内容约定
 
-- 中文简历；简历页区块顺序即打印顺序：头部 → 简介 → 技能 → 经历 → 项目 → 教育 → 证书
+- 中文简历；简历页区块顺序即打印顺序：头部 → 简介 → 技能 → 经历 → 项目 → 教育
 - 按用户要求已移除所有头像/照片展示，纯文本布局
 - 代码注释用中文
