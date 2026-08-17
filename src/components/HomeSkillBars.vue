@@ -4,28 +4,18 @@ import type { SkillGroup } from '../types/resume';
 
 const props = defineProps<{ groups: SkillGroup[] }>();
 
-const root = ref<HTMLElement | null>(null);
 const visible = ref(false);
 
+// client:visible 已保证挂载时元素在视口内，挂载后直接翻转触发过渡
 onMounted(() => {
-  const el = root.value;
-  if (!el) return;
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      if (entries[0]?.isIntersecting) {
-        visible.value = true;
-        observer.disconnect();
-      }
-    },
-    { threshold: 0.2 },
-  );
-  observer.observe(el);
+  requestAnimationFrame(() => {
+    visible.value = true;
+  });
 });
 </script>
 
 <template>
-  <div ref="root" class="grid gap-8 md:grid-cols-2">
+  <div class="grid gap-8 md:grid-cols-2">
     <div v-for="group in props.groups" :key="group.group" class="space-y-3">
       <h3 class="text-sm font-semibold text-primary-700">{{ group.group }}</h3>
       <div v-for="item in group.items" :key="item.name">
