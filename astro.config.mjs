@@ -6,7 +6,8 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  // EdgeOne Pages 部署在根路径；site 待部署后填分配到的域名
+  // Cloudflare Pages 部署：https://resume.yl4055.top（根路径）
+  site: 'https://resume.yl4055.top',
   base: '/',
 
   integrations: [vue()],
