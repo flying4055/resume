@@ -96,6 +96,17 @@
   ],
   "experience": [
     {
+      "company": "自由职业",
+      "role": "全栈独立开发者",
+      "start": "2025-04",
+      "end": "至今",
+      "highlights": [
+        "以独立开发者身份承接游戏虚拟商品交易、桌面视频处理、软件授权认证等多个项目",
+        "独立完成 WordPress 电商建站、React + Tauri / Electron 桌面工具开发与 Docker 部署运维",
+        "负责需求沟通、技术方案设计与从 0 到 1 的全流程交付"
+      ]
+    },
+    {
       "company": "武汉匿迹科技有限公司",
       "role": "高级 PHP 工程师",
       "start": "2021-04",
@@ -189,16 +200,16 @@
       "role": "全栈开发",
       "start": "2025-10",
       "end": "2026-04",
-      "description": "基于 WordPress + WooCommerce 开发的游戏虚拟商品交易网站（lootx.games）。",
+      "description": "基于 WordPress 开发的游戏虚拟商品交易网站（lootx.games）。",
       "highlights": [
-        "基于 WooCommerce 完成虚拟商品交易流程开发",
+        "基于 WordPress 插件体系完成虚拟商品上架、交易与订单流程开发",
         "开发网站主题前端（pnpm 构建）与数据初始化插件",
         "基于 Docker Compose 编排部署环境，编写权限修复与 WP-CLI 运维脚本"
       ],
       "techStack": [
         "PHP",
         "WordPress",
-        "WooCommerce",
+        "虚拟商品交易插件",
         "MariaDB",
         "Docker Compose"
       ],
