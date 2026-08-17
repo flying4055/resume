@@ -6,9 +6,8 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  // Gitee Pages 部署：站点托管在 https://leon4055.gitee.io/resume/ 子路径下
-  site: 'https://leon4055.gitee.io',
-  base: '/resume/',
+  // EdgeOne Pages 部署在根路径；site 待部署后填分配到的域名
+  base: '/',
 
   integrations: [vue()],
 
