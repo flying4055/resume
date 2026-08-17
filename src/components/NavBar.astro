@@ -13,7 +13,7 @@ const links = [
 const pathname = Astro.url.pathname.replace(/\/$/, '') || '/';
 const navLinks = links.map((link) => ({
   ...link,
-  active: pathname === link.href.replace(/\/$/, ''),
+  active: pathname === (link.href.replace(/\/$/, '') || '/'),
 }));
 ---
 
