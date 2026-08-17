@@ -6,6 +6,10 @@ dist/
 # dependencies
 node_modules/
 
+# npm/yarn 锁文件（本项目只允许 pnpm）
+package-lock.json
+yarn.lock
+
 # logs
 npm-debug.log*
 yarn-debug.log*
