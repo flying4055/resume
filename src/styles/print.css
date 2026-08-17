@@ -30,8 +30,8 @@
     border: 0 !important;
   }
 
-  /* 4. 卡片 / 条目禁止跨页断裂 */
-  section,
+  /* 4. 条目禁止跨页断裂（区块级 section 不设限：内容增多时整块后移
+        会空出页底空间并连锁产生近空白尾页） */
   article,
   li,
   .avoid-break {
