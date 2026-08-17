@@ -5,11 +5,11 @@ import type { Project } from '../types/resume';
 const props = defineProps<{ projects: Project[] }>();
 
 const active = ref('全部');
-const tags = computed(() => ['全部', ...new Set(props.projects.flatMap((p) => p.techStack))]);
+const tags = computed(() => ['全部', ...new Set(props.projects.flatMap((p) => p.techStack ?? []))]);
 const filtered = computed(() =>
   active.value === '全部'
     ? props.projects
-    : props.projects.filter((p) => p.techStack.includes(active.value)),
+    : props.projects.filter((p) => (p.techStack ?? []).includes(active.value)),
 );
 </script>
 
@@ -39,7 +39,7 @@ const filtered = computed(() =>
         v-for="project in filtered"
         :id="project.id"
         :key="project.id"
-        class="flex flex-col rounded-2xl border border-ink-400/15 bg-surface p-6 shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md"
+        class="flex scroll-mt-20 flex-col rounded-2xl border border-ink-400/15 bg-surface p-6 shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md"
       >
         <!-- 封面占位 -->
         <div
@@ -68,7 +68,7 @@ const filtered = computed(() =>
 
         <div class="mt-4 flex flex-wrap gap-1.5">
           <span
-            v-for="tech in project.techStack"
+            v-for="tech in project.techStack ?? []"
             :key="tech"
             class="rounded-full bg-primary-50 px-2.5 py-0.5 text-xs text-primary-700"
           >
@@ -76,10 +76,10 @@ const filtered = computed(() =>
           </span>
         </div>
 
-        <div v-if="project.links.demo || project.links.github" class="mt-4 flex gap-3 border-t border-ink-400/10 pt-4">
+        <div v-if="project.links?.demo || project.links?.github" class="mt-4 flex gap-3 border-t border-ink-400/10 pt-4">
           <a
-            v-if="project.links.demo"
-            :href="project.links.demo"
+            v-if="project.links?.demo"
+            :href="project.links?.demo"
             target="_blank"
             rel="noopener noreferrer"
             class="text-sm font-medium text-primary-600 hover:text-primary-700"
@@ -87,8 +87,8 @@ const filtered = computed(() =>
             在线演示 →
           </a>
           <a
-            v-if="project.links.github"
-            :href="project.links.github"
+            v-if="project.links?.github"
+            :href="project.links?.github"
             target="_blank"
             rel="noopener noreferrer"
             class="text-sm font-medium text-primary-600 hover:text-primary-700"

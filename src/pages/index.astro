@@ -115,7 +115,7 @@ const featuredProjects = data.projects.slice(0, 2);
           </div>
           <p class="mt-2 text-sm leading-relaxed text-ink-600">{project.description}</p>
           <div class="mt-4 flex flex-wrap gap-1.5">
-            {project.techStack.slice(0, 4).map((tech) => (
+            {(project.techStack ?? []).slice(0, 4).map((tech) => (
               <span class="rounded-full bg-primary-50 px-2.5 py-0.5 text-xs text-primary-700">{tech}</span>
             ))}
           </div>

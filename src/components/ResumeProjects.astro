@@ -30,7 +30,7 @@ const { items } = Astro.props;
           ))}
         </ul>
         <div class="mt-1.5 flex flex-wrap gap-1">
-          {item.techStack.map((tech) => (
+          {(item.techStack ?? []).map((tech) => (
             <span class="rounded-full bg-primary-50 px-2 py-0.5 text-xs text-primary-700">{tech}</span>
           ))}
         </div>
