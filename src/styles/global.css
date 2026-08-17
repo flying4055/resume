@@ -1,1 +1,60 @@
 @import "tailwindcss";
+@import "./print.css";
+
+@theme {
+  /* 中文友好系统字体栈（不用 web 字体：打印确定性 + 中文字体体积大） */
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei",
+    "Noto Sans SC", "Helvetica Neue", Arial, sans-serif;
+
+  /* 主色：清新青（cyan） */
+  --color-primary-50: #ecfeff;
+  --color-primary-100: #cffafe;
+  --color-primary-200: #a5f3fc;
+  --color-primary-300: #67e8f9;
+  --color-primary-400: #22d3ee;
+  --color-primary-500: #06b6d4;
+  --color-primary-600: #0891b2;
+  --color-primary-700: #0e7490;
+
+  /* 辅助色：靛蓝（indigo），用于渐变与次要强调 */
+  --color-secondary-100: #e0e7ff;
+  --color-secondary-400: #818cf8;
+  --color-secondary-500: #6366f1;
+  --color-secondary-600: #4f46e5;
+
+  /* 强调色：珊瑚粉（rose），用于徽章 / 链接 / 小点缀 */
+  --color-accent-100: #ffe4e6;
+  --color-accent-400: #fb7185;
+  --color-accent-500: #f43f5e;
+  --color-accent-600: #e11d48;
+
+  /* 中性色与背景 */
+  --color-page: #f0f9ff;
+  --color-surface: #ffffff;
+  --color-ink-900: #0f172a;
+  --color-ink-600: #475569;
+  --color-ink-400: #94a3b8;
+}
+
+/* 屏幕端 A4 纸张模拟（打印规则全部在 print.css） */
+.resume-sheet {
+  width: 210mm;
+  min-height: 297mm;
+  margin-inline: auto;
+  padding: 12mm 14mm; /* 与 @page margin 完全一致：屏幕所见 = 打印所得 */
+  background: var(--color-surface);
+  box-shadow: 0 10px 40px rgb(15 23 42 / 0.08);
+  border-radius: 8px;
+}
+
+/* 小屏（手机 / 平板竖屏 < 210mm 模拟宽）放弃纸张模拟，改为流式卡片：
+   必须限定 screen——打印视口宽约 794px，若不加会命中该断点破坏打印 */
+@media screen and (max-width: 850px) {
+  .resume-sheet {
+    width: 100%;
+    min-height: 0;
+    padding: 20px 16px;
+    border-radius: 12px;
+  }
+}

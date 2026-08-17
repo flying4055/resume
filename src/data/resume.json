@@ -1,0 +1,344 @@
+{
+  "basic": {
+    "name": "杨亮",
+    "jobIntent": "高级 PHP 开发工程师",
+    "tagline": "9 年 PHP 全栈开发经验，主导电商与工具类产品研发",
+    "location": "武汉",
+    "email": "rootyangliang@126.com",
+    "phone": "17621207953",
+    "github": "https://github.com/flying4055",
+    "blog": "",
+    "yearsExperience": 9
+  },
+  "summary": "9 年 PHP 开发经验，精通 ThinkPHP、Laravel、FastAdmin、WordPress 等主流框架，具备 Vue / React / Electron / Tauri 全栈开发能力。擅长系统架构设计与 MySQL 性能调优，主导过多个电商平台与桌面工具类产品从 0 到 1 的全流程交付，有完整的微信生态产品与第三方 AI 能力集成经验。",
+  "education": [
+    {
+      "school": "江汉艺术职业学院",
+      "major": "计算机网络技术",
+      "degree": "大专",
+      "start": "2013-09",
+      "end": "2016-06"
+    }
+  ],
+  "skills": [
+    {
+      "group": "后端",
+      "items": [
+        {
+          "name": "PHP",
+          "level": 90
+        },
+        {
+          "name": "系统架构设计",
+          "level": 78
+        },
+        {
+          "name": "Rust",
+          "level": 60
+        }
+      ]
+    },
+    {
+      "group": "框架与工程化",
+      "items": [
+        {
+          "name": "ThinkPHP / FastAdmin",
+          "level": 85
+        },
+        {
+          "name": "Laravel",
+          "level": 80
+        },
+        {
+          "name": "WordPress / WooCommerce",
+          "level": 80
+        }
+      ]
+    },
+    {
+      "group": "前端与桌面",
+      "items": [
+        {
+          "name": "Vue / Nuxt",
+          "level": 78
+        },
+        {
+          "name": "TypeScript",
+          "level": 72
+        },
+        {
+          "name": "React / Ant Design",
+          "level": 68
+        },
+        {
+          "name": "Electron / Tauri",
+          "level": 70
+        }
+      ]
+    },
+    {
+      "group": "数据与运维",
+      "items": [
+        {
+          "name": "MySQL 性能调优",
+          "level": 82
+        },
+        {
+          "name": "Linux / Nginx",
+          "level": 75
+        },
+        {
+          "name": "Docker 容器化部署",
+          "level": 72
+        }
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "company": "武汉匿迹科技有限公司",
+      "role": "高级 PHP 工程师",
+      "start": "2021-04",
+      "end": "2025-03",
+      "highlights": [
+        "主导包包定制商城后端架构与开发（Laravel），搭建 vue-antd-admin 管理后台",
+        "主导论文改重网全栈开发，基于 FastAdmin 构建后台管理与 API 服务",
+        "主导 DAD 竞拍平台前端建设，基于 Nuxt.js 与 Vue 3 完成竞拍 APP 与客服端"
+      ]
+    },
+    {
+      "company": "湖北聚优汇有限公司",
+      "role": "高级 PHP 工程师",
+      "start": "2020-03",
+      "end": "2021-02",
+      "highlights": [
+        "独立负责公司全部线上平台的技术维护与业务迭代",
+        "主导同城鲜达 / 多菜鲜达业务开发，完成数据统计、商品排序、限购、账期支付等核心模块",
+        "负责需求沟通与方案落地，推动业务快速上线"
+      ]
+    },
+    {
+      "company": "上海通众广告传媒有限公司 / 深圳通众广告传媒有限公司",
+      "role": "高级 PHP 工程师",
+      "start": "2018-05",
+      "end": "2019-12",
+      "highlights": [
+        "负责项目后台需求分析、数据库设计与公司公众号功能开发",
+        "独立完成通众置业后台 API、H5 与小程序开发，负责服务器搭建与 HTTPS 配置",
+        "主导砸点广告、上画拍等业务系统后台构建，集成高德地图、富文本等第三方能力"
+      ]
+    },
+    {
+      "company": "上海奇已信息科技有限公司",
+      "role": "高级 PHP 工程师",
+      "start": "2016-10",
+      "end": "2018-05",
+      "highlights": [
+        "负责项目后台需求分析与数据库设计，输出需求文档与可行性方案",
+        "基于 PHP + MySQL 完成网站前后台开发与数据库调优",
+        "负责小李子 APP、人人微拍等电商项目接口设计、服务器运维与上线"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "id": "nebula-auth-key",
+      "name": "星云认证密钥系统",
+      "role": "后端开发",
+      "start": "2026-05",
+      "end": "2026-07",
+      "description": "基于 WordPress 开发的软件授权认证系统，为桌面客户端提供注册登录、license 校验与设备管理能力。",
+      "highlights": [
+        "开发认证密钥插件，实现邮箱注册登录、验证码、失败锁定与频控",
+        "实现密钥发放、验证授权、终止、设备绑定与客户端心跳上报（签名防重放）",
+        "基于 Docker Compose 编排 WordPress + MariaDB 环境，完成后台管理、审计日志与在线设备看板"
+      ],
+      "techStack": [
+        "PHP",
+        "WordPress",
+        "MariaDB",
+        "Docker Compose"
+      ],
+      "links": {}
+    },
+    {
+      "id": "nebula-desktop-tools",
+      "name": "桌面视频处理工具",
+      "role": "全栈开发",
+      "start": "2026-04",
+      "end": "2026-07",
+      "description": "面向视频处理场景的 Windows 桌面工具：双产品视频转码工具与短剧搜索下载工具，共享 WordPress 认证后端。",
+      "highlights": [
+        "基于 React 19 + Tauri 2 + Rust 开发视频转码桌面工具，集成 ffmpeg 转码与 metadata 写入",
+        "接入火山方舟 AI 接口完成视频文案、简介与封面处理",
+        "基于 Electron + React 开发短剧下载工具，支持 MP4 与 M3U8 分片下载合并、NSIS 安装包打包"
+      ],
+      "techStack": [
+        "React",
+        "TypeScript",
+        "Tauri",
+        "Rust",
+        "Electron",
+        "ffmpeg"
+      ],
+      "links": {}
+    },
+    {
+      "id": "wpgame-trade",
+      "name": "游戏虚拟商品交易网站",
+      "role": "全栈开发",
+      "start": "2025-10",
+      "end": "2026-04",
+      "description": "基于 WordPress + WooCommerce 开发的游戏虚拟商品交易网站（lootx.games）。",
+      "highlights": [
+        "基于 WooCommerce 完成虚拟商品交易流程开发",
+        "开发网站主题前端（pnpm 构建）与数据初始化插件",
+        "基于 Docker Compose 编排部署环境，编写权限修复与 WP-CLI 运维脚本"
+      ],
+      "techStack": [
+        "PHP",
+        "WordPress",
+        "WooCommerce",
+        "MariaDB",
+        "Docker Compose"
+      ],
+      "links": {}
+    },
+    {
+      "id": "dad-bidding",
+      "name": "DAD 竞拍平台",
+      "role": "前端开发",
+      "start": "2023-10",
+      "end": "2024-01",
+      "description": "竞拍业务平台，包含竞拍 APP（Nuxt.js）与客服端（Vue 3）前端界面。",
+      "highlights": [
+        "基于 Nuxt.js 开发竞拍 APP",
+        "使用 Vue 3 + TypeScript + Vite 完成客服端前端界面开发"
+      ],
+      "techStack": [
+        "Nuxt",
+        "Vue",
+        "TypeScript",
+        "JavaScript"
+      ],
+      "links": {}
+    },
+    {
+      "id": "paper-reduplication-network",
+      "name": "论文改重网",
+      "role": "全栈开发",
+      "start": "2022-08",
+      "end": "2023-03",
+      "description": "论文查重/改重服务平台，前端网站与后台管理系统双端开发。",
+      "highlights": [
+        "完成网站前端开发，使用 pm2 完成服务部署",
+        "基于 FastAdmin（ThinkPHP + Bootstrap）完成后台管理与 API 接口开发"
+      ],
+      "techStack": [
+        "PHP",
+        "FastAdmin",
+        "ThinkPHP",
+        "JavaScript",
+        "pm2",
+        "MySQL"
+      ],
+      "links": {}
+    },
+    {
+      "id": "bag-customization",
+      "name": "包包定制商城",
+      "role": "全栈开发",
+      "start": "2021-09",
+      "end": "2024-10",
+      "description": "包包定制商城，后端基于 Laravel 框架，配套 vue-antd-admin 管理后台。",
+      "highlights": [
+        "使用 Laravel 框架完成商城后端开发",
+        "基于 vue-antd-admin 搭建商城管理后台"
+      ],
+      "techStack": [
+        "PHP",
+        "Laravel",
+        "Vue",
+        "vue-antd-admin",
+        "MySQL"
+      ],
+      "links": {}
+    },
+    {
+      "id": "tongcheng-xianda",
+      "name": "同城鲜达 / 多菜鲜达",
+      "role": "后端开发",
+      "start": "2020-03",
+      "end": "2021-02",
+      "description": "本地生鲜配送电商平台，前端为微信公众号 H5。",
+      "highlights": [
+        "独立负责平台日常维护与业务迭代",
+        "主导完成数据统计、商品排序、限购、账期支付等核心模块"
+      ],
+      "techStack": [
+        "PHP",
+        "微信公众号 H5",
+        "MySQL"
+      ],
+      "links": {}
+    },
+    {
+      "id": "shanghuapai",
+      "name": "上画拍",
+      "role": "后端开发",
+      "start": "2018-05",
+      "end": "2019-12",
+      "description": "为公司广告安装人员提供订单信息与小区信息的小程序。",
+      "highlights": [
+        "独立完成小程序与后台的整体开发",
+        "实现图片上传、拍照、裁剪与接口对接"
+      ],
+      "techStack": [
+        "PHP",
+        "ThinkPHP",
+        "微信小程序"
+      ],
+      "links": {}
+    },
+    {
+      "id": "zadian-ad",
+      "name": "砸点广告",
+      "role": "后端开发",
+      "start": "2018-05",
+      "end": "2019-12",
+      "description": "公司广告业务推广应用，为广告投放流程提供后台管理。",
+      "highlights": [
+        "主导后台整体构建，实现账号登录、权限管理等模块",
+        "接入高德地图与富文本编辑器，实现 Excel 导入、图片上传排序"
+      ],
+      "techStack": [
+        "PHP",
+        "JavaScript",
+        "MySQL",
+        "高德地图 API"
+      ],
+      "links": {}
+    },
+    {
+      "id": "tongzhong-zhiye",
+      "name": "上海通众置业",
+      "role": "后端开发",
+      "start": "2018-05",
+      "end": "2019-12",
+      "description": "为微信用户提供上海周边新房源信息的公众号与小程序平台。",
+      "highlights": [
+        "基于 ThinkPHP 编写后台 API 与 H5 页面，提供小程序 HTTPS 接口",
+        "完成房天下官方 APP 接口数据爬取与服务搭建",
+        "服务器部署于阿里云并配置 SSL 证书"
+      ],
+      "techStack": [
+        "PHP",
+        "ThinkPHP",
+        "微信小程序",
+        "MySQL",
+        "Nginx"
+      ],
+      "links": {}
+    }
+  ]
+}

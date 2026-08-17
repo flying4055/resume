@@ -1,0 +1,21 @@
+---
+import resume from '../data/resume.json';
+import Icon from './Icon.astro';
+
+const year = new Date().getFullYear();
+---
+
+<footer class="mt-auto border-t border-ink-400/15 py-8 print:hidden">
+  <div class="mx-auto flex max-w-5xl flex-col items-center gap-3 px-4 text-sm text-ink-600 sm:flex-row sm:justify-between sm:px-6">
+    <p>© {year} {resume.basic.name} · {resume.basic.jobIntent}</p>
+    <p class="flex items-center gap-2">
+      <Icon name="mail" class="h-4 w-4" />
+      <a href={`mailto:${resume.basic.email}`} class="hover:text-primary-600">
+        {resume.basic.email}
+      </a>
+      <span class="text-ink-400">|</span>
+      <Icon name="location" class="h-4 w-4" />
+      {resume.basic.location}
+    </p>
+  </div>
+</footer>

@@ -1,0 +1,79 @@
+/* ===== 打印专用：@page 规则 + @media print ===== */
+@page {
+  size: A4; /* 210mm × 297mm */
+  margin: 12mm 14mm; /* 上下 12mm，左右 14mm */
+}
+
+@media print {
+  /* 1. 整体字号缩放：14px 基数下紧凑打印 */
+  html {
+    font-size: 14px;
+  }
+
+  /* 2. 保留背景色 / 图标颜色，禁止浏览器漂白 */
+  body {
+    background: #fff !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* 3. A4 容器还原：清除屏幕模拟
+     ★关键：padding 必须清零，否则与 @page 边距叠加翻倍 */
+  .resume-sheet {
+    width: auto !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    min-height: 0 !important; /* 防止内容恰好 297mm 时产生接近空白的第 2 页 */
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    border: 0 !important;
+  }
+
+  /* 4. 卡片 / 条目禁止跨页断裂 */
+  section,
+  article,
+  li,
+  .avoid-break {
+    break-inside: avoid;
+    page-break-inside: avoid; /* 旧语法兜底 */
+  }
+
+  /* 5. 标题不与正文分离 */
+  h1,
+  h2,
+  h3,
+  h4 {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  /* 6. 段落 / 列表防孤行 */
+  p,
+  li {
+    orphans: 3;
+    widows: 3;
+  }
+
+  /* 7. 手动分页工具：验证后按需加在某个区块上 */
+  .break-before-page {
+    break-before: page;
+    page-break-before: always;
+  }
+
+  /* 8. 链接打印可读 */
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  /* 9. 关键色 hex 兜底：个别浏览器打印链路对 oklch 渲染不稳 */
+  .resume-sheet {
+    --color-primary-50: #ecfeff;
+    --color-primary-100: #cffafe;
+    --color-primary-400: #22d3ee;
+    --color-primary-500: #06b6d4;
+    --color-primary-600: #0891b2;
+    --color-primary-700: #0e7490;
+  }
+}

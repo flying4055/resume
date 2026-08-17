@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import resume from '../data/resume.json';
+import type { ResumeData } from '../types/resume';
+import PrintToolbar from '../components/PrintToolbar.astro';
+import ResumeHeader from '../components/ResumeHeader.astro';
+import ResumeSection from '../components/ResumeSection.astro';
+import ResumeSkills from '../components/ResumeSkills.astro';
+import ResumeExperience from '../components/ResumeExperience.astro';
+import ResumeProjects from '../components/ResumeProjects.astro';
+import ResumeEducation from '../components/ResumeEducation.astro';
+
+const data = resume as ResumeData;
+---
+
+<BaseLayout title="个人简历" description={`${data.basic.name} 的${data.basic.jobIntent}简历，支持一键打印为 PDF。`}>
+  <PrintToolbar />
+  <main class="bg-page px-3 py-6 print:bg-white print:p-0 sm:px-4 sm:py-10">
+    <article class="resume-sheet">
+      <ResumeHeader data={data} />
+      <ResumeSection title="个人简介">
+        <p class="text-sm leading-relaxed text-ink-600">{data.summary}</p>
+      </ResumeSection>
+      <ResumeSkills skills={data.skills} />
+      <ResumeExperience items={data.experience} />
+      <ResumeProjects items={data.projects} />
+      <ResumeSection title="教育背景">
+        <ResumeEducation items={data.education} />
+      </ResumeSection>
+    </article>
+  </main>
+</BaseLayout>

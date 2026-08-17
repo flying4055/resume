@@ -1,0 +1,32 @@
+---
+import type { Experience } from '../types/resume';
+import ResumeSection from './ResumeSection.astro';
+
+interface Props {
+  items: Experience[];
+}
+
+const { items } = Astro.props;
+---
+
+<ResumeSection title="工作经历">
+  <div class="space-y-4">
+    {items.map((item) => (
+      <article class="avoid-break">
+        <div class="flex items-baseline justify-between gap-4">
+          <h3 class="text-sm font-bold text-ink-900">{item.company}</h3>
+          <span class="shrink-0 text-xs text-ink-400">{item.start} - {item.end}</span>
+        </div>
+        <p class="mt-0.5 text-xs font-medium text-primary-600">{item.role}</p>
+        <ul class="mt-1.5 space-y-1">
+          {item.highlights.map((highlight) => (
+            <li class="flex gap-2 text-xs leading-relaxed text-ink-600">
+              <span class="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-secondary-400"></span>
+              {highlight}
+            </li>
+          ))}
+        </ul>
+      </article>
+    ))}
+  </div>
+</ResumeSection>

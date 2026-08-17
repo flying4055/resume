@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import resume from '../data/resume.json';
+import type { ResumeData } from '../types/resume';
+import ProjectFilter from '../components/ProjectFilter.vue';
+
+const data = resume as ResumeData;
+---
+
+<BaseLayout title="项目经历" description={`${data.basic.name} 的项目经历展示`}>
+  <main class="mx-auto w-full max-w-5xl flex-1 px-4 py-12 sm:px-6">
+    <header class="text-center">
+      <h1 class="text-3xl font-bold text-ink-900">项目经历</h1>
+      <p class="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-ink-600">
+        主导与参与的主要项目案例，可按技术栈筛选查看
+      </p>
+    </header>
+
+    <div class="mt-10">
+      <ProjectFilter projects={data.projects} client:load />
+    </div>
+  </main>
+</BaseLayout>

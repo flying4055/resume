@@ -1,0 +1,47 @@
+---
+import type { ResumeData } from '../types/resume';
+import Icon from './Icon.astro';
+
+interface Props {
+  data: ResumeData;
+}
+
+const { data } = Astro.props;
+const { basic } = data;
+---
+
+<header class="border-b-2 border-primary-500 pb-4">
+  <h1 class="text-3xl font-bold tracking-wide text-ink-900">{basic.name}</h1>
+  <p class="mt-1.5 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm font-medium text-primary-600">
+    <span class="inline-block h-4 w-1 rounded bg-primary-500"></span>
+    {basic.jobIntent}
+    <span class="text-ink-400">·</span>
+    <span class="text-ink-600">{basic.tagline}</span>
+  </p>
+  <ul class="mt-3 flex flex-wrap gap-x-4 gap-y-1.5 text-xs text-ink-600">
+    <li class="flex items-center gap-1.5">
+      <Icon name="phone" class="h-3.5 w-3.5 text-ink-400" />
+      {basic.phone}
+    </li>
+    <li class="flex items-center gap-1.5">
+      <Icon name="mail" class="h-3.5 w-3.5 text-ink-400" />
+      {basic.email}
+    </li>
+    <li class="flex items-center gap-1.5">
+      <Icon name="location" class="h-3.5 w-3.5 text-ink-400" />
+      {basic.location}
+    </li>
+    {basic.github && (
+      <li class="flex items-center gap-1.5">
+        <Icon name="github" class="h-3.5 w-3.5 text-ink-400" />
+        <a href={basic.github} class="hover:text-primary-600">{basic.github.replace('https://', '')}</a>
+      </li>
+    )}
+    {basic.blog && (
+      <li class="flex items-center gap-1.5">
+        <Icon name="link" class="h-3.5 w-3.5 text-ink-400" />
+        <a href={basic.blog} class="hover:text-primary-600">{basic.blog.replace('https://', '')}</a>
+      </li>
+    )}
+  </ul>
+</header>

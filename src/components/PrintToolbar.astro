@@ -1,0 +1,22 @@
+---
+import Icon from './Icon.astro';
+
+const homeHref = import.meta.env.BASE_URL;
+---
+
+<div class="fixed bottom-5 right-4 z-50 flex items-center gap-3 print:hidden sm:bottom-6 sm:right-6">
+  <a
+    href={homeHref}
+    class="hidden items-center gap-2 rounded-full bg-white px-4 py-2.5 text-sm text-ink-600 shadow-md ring-1 ring-ink-400/20 transition-colors hover:text-primary-600 sm:flex"
+  >
+    返回首页
+  </a>
+  <button
+    type="button"
+    onclick="window.print()"
+    class="flex items-center gap-2 rounded-full bg-primary-600 px-4 py-2.5 text-sm font-medium text-white shadow-md transition-colors hover:bg-primary-700 sm:px-5"
+  >
+    <Icon name="print" class="h-4 w-4" />
+    打印 / 导出 PDF
+  </button>
+</div>

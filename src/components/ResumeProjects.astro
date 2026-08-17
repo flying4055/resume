@@ -1,0 +1,40 @@
+---
+import type { Project } from '../types/resume';
+import ResumeSection from './ResumeSection.astro';
+
+interface Props {
+  items: Project[];
+}
+
+const { items } = Astro.props;
+---
+
+<ResumeSection title="项目经历">
+  <div class="space-y-3.5">
+    {items.map((item) => (
+      <article class="avoid-break">
+        <div class="flex items-baseline justify-between gap-4">
+          <h3 class="text-sm font-bold text-ink-900">
+            {item.name}
+            <span class="ml-2 text-xs font-normal text-ink-400">{item.role}</span>
+          </h3>
+          <span class="shrink-0 text-xs text-ink-400">{item.start} - {item.end}</span>
+        </div>
+        <p class="mt-0.5 text-xs leading-relaxed text-ink-600">{item.description}</p>
+        <ul class="mt-1 space-y-0.5">
+          {item.highlights.map((highlight) => (
+            <li class="flex gap-2 text-xs leading-relaxed text-ink-600">
+              <span class="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-secondary-400"></span>
+              {highlight}
+            </li>
+          ))}
+        </ul>
+        <div class="mt-1.5 flex flex-wrap gap-1">
+          {item.techStack.map((tech) => (
+            <span class="rounded-full bg-primary-50 px-2 py-0.5 text-xs text-primary-700">{tech}</span>
+          ))}
+        </div>
+      </article>
+    ))}
+  </div>
+</ResumeSection>
