@@ -22,3 +22,8 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# 个人私有资料（不进入公开仓库）
+docs/
+*.docx
+
